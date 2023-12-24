@@ -1,9 +1,12 @@
 // Dependencies
 const express = require("express");
+const process = require("process");
 const cookieParser = require("cookie-parser");
 const session = require("express-session");
 const MongoStore = require("connect-mongo");
 const passport = require("passport");
+
+process.env.DBPASS = "S6gUQCAMQbuHPiAs";
 
 // Routes
 const groceriesRoute = require("./routes/groceries");
@@ -17,7 +20,7 @@ require("./database");
 require("./strategies/local");
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 // General Middlewares
 app.use(express.json());
