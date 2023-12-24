@@ -6,8 +6,6 @@ const session = require("express-session");
 const MongoStore = require("connect-mongo");
 const passport = require("passport");
 
-process.env.DBPASS = "S6gUQCAMQbuHPiAs";
-
 // Routes
 const groceriesRoute = require("./routes/groceries");
 const marketsRoute = require("./routes/markets");
